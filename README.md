@@ -26,3 +26,8 @@ parallelogram area calc,
 trapezoid area calc
 
 There is also another issue, but I am going to keep it because I do not think it's fixable and I don't want to screw the project by fixing it. That issue should just stay. When you enter text when the program asks you for a number it puts 0 and a random number in. This is the issue.
+
+
+**17.02.2023 The first official release**
+
+Yes, today on 17th of February I am releasing the first version of the universeCalc. It can be installed on linux by running the sh script in the same directory the universeCalc file is in. Windows and Mac users are advised to SUCK IT.

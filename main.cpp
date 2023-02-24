@@ -10,7 +10,8 @@ int main()
     double a,b,c,d,e,f;
     
     cout << "Welcome to universalCalc. Here you can use any number (even 0.1 and stuff like that) and calculate anything you want" << endl;
-    cout << "What would you like to calculate? Write anything that is not in the program to exit." << endl;
+    ask:
+    cout << "What would you like to calculate? Write anything that is not in the program to exit. Input 'help' to view all the commands." << endl;
     getline(cin, choice);
     if(choice == "sin" || choice == "sine")
     {
@@ -146,7 +147,7 @@ int main()
     }
     else if(choice == "Velocity" || choice == "velocity")
     {
-        cout << "Calculating: velocity" << endl;
+        cout << "Calculating: velocity (v = d / t)" << endl;
         cout << "Input the displacement: ";
         cin >> a;
         cout << "Input the time: ";
@@ -156,7 +157,7 @@ int main()
     }
     else if(choice == "Acceleration" || choice == "acceleration" || choice == "accel")
     {
-        cout << "Calculating: acceleration" << endl;
+        cout << "Calculating: acceleration (a = change in v / change in t)" << endl;
         cout << "Input the change in velocity: ";
         cin >> a;
         cout << "Input the change in time: ";
@@ -201,5 +202,44 @@ int main()
             d = c / b;
             cout << "The time equals: " << sqrt(d) << endl;
         }
+    }
+    else if(choice == "height" || choice == "Height")
+    {
+        cout << "Calculating: height (h = 1/2 * g * t²)" << endl;
+        cout << "The gravity is around 10 m/s²." << endl;
+        a = 10;
+        cout << "Input the time: ";
+        cin >> b;
+        c = b * b;
+        d = a * c;
+        e = d / 2;
+        cout << "The height is: " << e << endl;
+    }
+    else if(choice == "Greatest Common Factor" || choice == "gcf" || choice == "GCF")
+    {
+        cout << "Calculating: Greatest Common Factor" << endl;
+        cout << "Input a number: ";
+        cin >> a;
+        cout << "Input another number: ";
+        cin >> b;
+
+        while(a != b)
+        {
+            if(a > b)
+            {
+                a -= b;
+            }
+            else 
+            {
+                b -= a;
+            }
+        }
+        cout << "The Greatest Common Factor is: " << a << endl;
+    }
+    else if(choice == "help")
+    {
+        cout << "The commands are: " << endl;
+        cout << "help \nsine \ncosine \ntangent \nadd \nsubtract \nmultiply \ndivide \narea of square \narea of rectangle \narea of triangle \narea of rhombus \narea of parallelogram \narea of trapezoid \nvelocity \nacceleration \ndisplacement \ntime \nheight \nGCF \n";
+        goto ask;
     }
 }

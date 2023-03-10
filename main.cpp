@@ -1,18 +1,95 @@
+#include <cstdio>
 #include <iostream>
 #include "MathFunctions.h"
 #include <string>
 #include <cmath>
 using namespace std;
 
+//Adding * operator for string
+string operator * (string a, unsigned int b) {
+    string output = "";
+    while (b--) {
+        output += a;
+    }
+    return output;
+}
+
+void Algorithm();
+void Calculator();
+void ChartBuilder();
+
 int main()
+{ 
+    string fchoice;
+    cout << "Welcome to cppGalaxy. Here you can use any number (even 0.1 and stuff like that) and calculate anything you want. You can also use algorithms." << endl;
+    c:
+    cout << "What would you like to do? Write anything that is not in the program to exit. Input 'help' to view all the commands." << endl;
+    getline(cin, fchoice);
+    if(fchoice == "help")
+    {
+        cout << "The commands are: " << endl;
+        cout << "help \nCalculator \nAlgorithm \nChart Builder (doesn't work yet)";
+        goto c;
+    }
+    else if(fchoice == "Calculator")
+    {
+        Calculator();
+    }
+    else if(fchoice == "Algorithm")
+    {
+        Algorithm();
+    }
+    else if(fchoice == "Chart Builder")
+    {
+        //ChartBuilder();
+    }
+    return 0;
+}
+
+void Algorithm()
 {
     string choice;
     double a,b,c,d,e,f;
-    
-    cout << "Welcome to universalCalc. Here you can use any number (even 0.1 and stuff like that) and calculate anything you want" << endl;
+
     ask:
-    cout << "What would you like to calculate? Write anything that is not in the program to exit. Input 'help' to view all the commands." << endl;
+    cout << "What algorithm do you want to use? Input 'help' to view all the commands." << endl;
     getline(cin, choice);
+    if(choice == "Greatest Common Factor" || choice == "gcf" || choice == "GCF")
+    {
+        cout << "Calculating: Greatest Common Factor" << endl;
+        cout << "Input a number: ";
+        cin >> a;
+        cout << "Input another number: ";
+        cin >> b;
+
+        while(a != b)
+        {
+            if(a > b)
+            {
+                a -= b;
+            }
+            else 
+            {
+                b -= a;
+            }
+        }
+        cout << "The Greatest Common Factor is: " << a << endl;
+    }
+    else if(choice == "help")
+    {
+        cout << "The commands are:" << endl;
+        cout << "gcf (Greatest Common Factor)\n ";
+    }
+}
+void Calculator()
+{
+    string choice;
+    double a,b,c,d,e,f;
+
+    ask:
+    cout << "What do you want to calculate? Input 'help' to view all the commands." << endl;
+    getline(cin, choice);
+
     if(choice == "sin" || choice == "sine")
     {
         cout << "Calculating: sine" << endl;
@@ -215,31 +292,151 @@ int main()
         e = d / 2;
         cout << "The height is: " << e << endl;
     }
-    else if(choice == "Greatest Common Factor" || choice == "gcf" || choice == "GCF")
+    else if(choice == "Regular polygon area" || choice == "polygon area")
     {
-        cout << "Calculating: Greatest Common Factor" << endl;
-        cout << "Input a number: ";
+        cout << "Calculating: area of polygon" << endl;
+        cout << "Input the perimeter of the polygon: ";
         cin >> a;
-        cout << "Input another number: ";
+        cout << "Input the apothem of the polygon: ";
         cin >> b;
-
-        while(a != b)
-        {
-            if(a > b)
-            {
-                a -= b;
-            }
-            else 
-            {
-                b -= a;
-            }
-        }
-        cout << "The Greatest Common Factor is: " << a << endl;
+        c = a / 2;
+        d = c * b;
+        cout << "The area of the polygon equals: " << d << endl;
+    }
+    else if(choice == "Circle area" || choice == "area of circle" || choice == "circle")
+    {
+        cout << "Calculating: circle area" << endl;
+        cout << "Input the radius of the circle: ";
+        cin >> a;
+        a = a * a;
+        b = pi() * a;
+        cout << "The area of the circle is: " << b << endl;
+        cout << "This calculation may not be perfect because the number pi is infinitely long and I can't just give a infinitely long number to a computer because first, I just can't and second, it would not work." << endl;
+    }
+    else if(choice == "Cone area" || choice == "area of cone")
+    {
+        cout << "Calculating: area of cone" << endl;
+        cout << "Input the slant height of the cone: ";
+        cin >> a;
+        cout << "Input the radius of the cone: ";
+        cin >> b;
+        c = pi() * b;
+        d = c * a;
+        cout << "The area of the cone is: " << d << endl;
+    }
+    else if(choice == "Sphere area" || choice == "area of sphere")
+    {
+        cout << "Calculating: area of sphere" << endl;
+        cout << "Input the radius of the sphere: ";
+        cin >> a;
+        b = 4 * pi();
+        c = a * a;
+        d = b * c;
+        cout << "The area of the sphere is: " << d << endl;
+    }
+    else if(choice == "Cube volume" || choice == "volume of cube")
+    {
+        cout << "Calculating: volume of cube" << endl;
+        cout << "Input the length of the side: ";
+        cin >> a;
+        cout << "The volume of the cube equals: " << cubeVol(a) << endl;
+    }
+    else if(choice == "Parallelepiped volume" || choice == "volume of parallelepiped")
+    {
+        cout << "Calculating: volume of parallelepiped" << endl;
+        cout << "Input the length of the parallelepiped: ";
+        cin >> a;
+        cout << "Input the width of the parallelepiped: ";
+        cin >> b;
+        cout << "Input the height of the parallelepiped: ";
+        cin >> c;
+        d = a * b * c;
+        cout << "The volume of the parallelepiped equals: " << d << endl;
+    }
+    else if(choice == "Prism volume" || choice == "prism vol")
+    {
+        cout << "Calculating: prism volume" << endl;
+        cout << "Input the base length: ";
+        cin >> a;
+        cout << "Input the height: ";
+        cin >> b;
+        c = a * b;
+        cout << "The volume of the prism equals: " << c << endl;
+    }
+    else if(choice == "Cylinder volume" || choice == "cylinder vol")
+    {
+        cout << "Calculating: cylinder volume" << endl;
+        cout << "Input the radius of the cylinder: ";
+        cin >> a;
+        cout << "Input the height of the cylinder: ";
+        cin >> b;
+        c = a * a;
+        d = c * b;
+        e = pi() * d;
+        cout << "The volume of the cylinder equals: " << e << endl;
+    }
+    else if(choice == "Cone volume" || choice == "cone vol")
+    {
+        cout << "Calculating: cone volume" << endl;
+        cout << "Input the base length: ";
+        cin >> a;
+        cout << "Input the height: ";
+        cin >> b;
+        c = 0.5 * a;
+        d = c * b;
+        cout << "The volume of the cone equals: " << d << endl;
     }
     else if(choice == "help")
     {
         cout << "The commands are: " << endl;
-        cout << "help \nsine \ncosine \ntangent \nadd \nsubtract \nmultiply \ndivide \narea of square \narea of rectangle \narea of triangle \narea of rhombus \narea of parallelogram \narea of trapezoid \nvelocity \nacceleration \ndisplacement \ntime \nheight \nGCF \n";
+        cout << "help \nsine \ncosine \ntangent \nadd \nsubtract \nmultiply \ndivide \narea of square \narea of rectangle \narea of triangle \narea of rhombus \narea of parallelogram \narea of trapezoid \nvelocity \nacceleration \ndisplacement \ntime \nheight \nRegular polygon area \nCircle area \nCone area \nSphere area \nCube volume \nParallelepiped volume \n";
         goto ask;
     }
 }
+
+/*void ChartBuilder()
+{
+    string choice;
+    string collumn = "| \n";
+    int a,b,c,d,e,f,g,h;
+    int i, elementAmount;
+    cout << "Input the amount of elements (max 8): ";
+    cin >> elementAmount;
+    for(i = 0; i < elementAmount; i++)
+    {
+        cout << "Input a number: ";
+        if(i == 0)
+        {
+            cin >> a;
+        }
+        if(i == 1)
+        {
+            cin >> b;
+        }
+        if(i == 2)
+        {
+            cin >> c;
+        }
+        if(i == 3)
+        {
+            cin >> d;
+        }
+        if(i == 4)
+        {
+            cin >> e;
+        }
+        if(i == 5)
+        {
+            cin >> f;
+        }
+        if(i == 6)
+        {
+            cin >> g;
+        }
+        if(i == 7)
+        {
+            cin >> h;
+        }
+    }
+    cout << (collumn * biggestNumber(a,b,c,d,e,f,g,h));
+}*/

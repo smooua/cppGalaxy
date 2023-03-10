@@ -28,7 +28,7 @@ int main()
     if(fchoice == "help")
     {
         cout << "The commands are: " << endl;
-        cout << "help \nCalculator \nAlgorithm \nChart Builder (doesn't work yet)";
+        cout << "help \nCalculator \nAlgorithm \nChart Builder (doesn't work yet) \n";
         goto c;
     }
     else if(fchoice == "Calculator")
@@ -389,7 +389,7 @@ void Calculator()
     else if(choice == "help")
     {
         cout << "The commands are: " << endl;
-        cout << "help \nsine \ncosine \ntangent \nadd \nsubtract \nmultiply \ndivide \narea of square \narea of rectangle \narea of triangle \narea of rhombus \narea of parallelogram \narea of trapezoid \nvelocity \nacceleration \ndisplacement \ntime \nheight \nRegular polygon area \nCircle area \nCone area \nSphere area \nCube volume \nParallelepiped volume \n";
+        cout << "help \nsine \ncosine \ntangent \nadd \nsubtract \nmultiply \ndivide \narea of square \narea of rectangle \narea of triangle \narea of rhombus \narea of parallelogram \narea of trapezoid \nvelocity \nacceleration \ndisplacement \ntime \nheight \nRegular polygon area \nCircle area \nCone area \nSphere area \nCube volume \nParallelepiped volume \nPrism volume \nCylinder volume \nCone volume \n";
         goto ask;
     }
 }

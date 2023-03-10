@@ -1,6 +1,5 @@
-# universeCalc
-A shell calculator that can calculate anything you wish for. It is in development stage right now. It will be updated constantly because there are
-so many formulas existing that it's hard to put them all in one app. You can exit it using any phrase that is not a implemented equation. The calculator is going to be installable on linux through a shell script or if you would like to do this manually just pull the executable to /usr/bin/ folder and you can use it in the shell without doing ./blahblahblah. On windows it should be runnable through the shell too. I'm not sure tho, I don't use windows.
+# cppGalaxy
+A shell tool that can calculate anything you wish for, and perform some algorithms. It is in development stage right now. It will be updated constantly because there are so many formulas existing that it's hard to put them all in one app. You can exit it using any phrase that is not a implemented equation. The calculator is going to be installable on linux through a shell script or if you would like to do this manually just pull the executable to /usr/bin/ folder and you can use it in the shell without doing ./blahblahblah. On windows it should be runnable through the shell too. I'm not sure tho, I don't use windows.
 
 **LEGAL STUFF**
 
